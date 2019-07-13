@@ -3,14 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
         html,
         body {
-            border: 0;
+            margin: 0;
             padding: 0;
+            overflow: hidden;
         }
 
         #canvas {
@@ -22,6 +24,11 @@
 </head>
 
 <body>
+    <audio src="music/sfx_die.ogg" id="die"></audio>
+    <audio src="music/sfx_hit.ogg" id="hit"></audio>
+    <audio src="music/sfx_point.ogg" id="point"></audio>
+    <audio src="music/sfx_swooshing.ogg" id="swooshing"></audio>
+    <audio src="music/sfx_wing.ogg" id="wing"></audio>
     <canvas id="canvas"></canvas>
 </body>
 
