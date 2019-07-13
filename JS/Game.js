@@ -8,33 +8,19 @@ class Game {
         this.canvas.height = H;
         this.timer = null;
         this.frame = 0
+        this.score = 0
+        this.scene = 0
         this.imgLoad()
-        this.bindEvent()
     }
     clear() {
         this.draw.clearRect(0, 0, this.canvas.width, this.canvas.height)
     }
     start() {
-        this.bg = new Background()
-        this.land = new Land()
-        this.pipeArr = []
-        this.bird = new Bird()
+        this.SM = new SceneManager()
+        this.SM.enter(1)
         this.timer = setInterval(() => {
             this.frame++
-            // this.clear()
-            this.bg.update()
-            this.bg.render()
-            this.land.update()
-            this.land.render()
-            if (this.frame % 200 == 0) {
-                new Pipe()
-            }
-            this.pipeArr.forEach(item => {
-                item.update()
-                item.render()
-            })
-            this.bird.update()
-            this.bird.render()
+            this.SM.updateAndRender()
         }, 20)
     }
     imgLoad() {
@@ -87,10 +73,4 @@ class Game {
             }
         }
     }
-    bindEvent() {
-        this.canvas.onclick = () => {
-            this.bird.fly()
-        }
-    }
-
 }

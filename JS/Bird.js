@@ -2,7 +2,7 @@ class Bird {
     constructor() {
         this.x = game.allImg['bird0_0'].width
         this.x = game.canvas.width / 2 - this.w / 2
-        this.y = 10
+        this.y = game.canvas.height * (1 - 0.618)
         this.wing = 0
         this.status = "drop"
         this.changeY = 0
@@ -20,6 +20,10 @@ class Bird {
             this.y <= 0 ? this.y = 0 : null
             this.wing >= 2 ? this.wing = 0 : this.wing++
         }
+        this.x1 = this.x - 17
+        this.x2 = this.x + 17
+        this.y1 = this.y - 12
+        this.y2 = this.y + 12
         if (this.y >= game.canvas.height - game.allImg['land'].height) {
             this.y = game.canvas.height - game.allImg["land"].height
         }
