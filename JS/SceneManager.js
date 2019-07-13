@@ -103,8 +103,8 @@ class SceneManager {
                 game.bird.render()
                 if (game.frame % 150 == 0) {
                     new Pipe()
-                }
-                this.scoreRender()
+                };
+                !!game.score && this.scoreRender()
                 break
             case 3:
                 game.bg.render()
@@ -136,7 +136,7 @@ class SceneManager {
                 this.panelY <= 250 ? this.panelY = 250 : this.panelY -= 10
                 game.draw.drawImage(game.allImg['game_over'], this.overX, this.overY)
                 game.draw.drawImage(game.allImg["score_panel"], this.panelX, this.panelY)
-                game.draw.drawImage(game.allImg[this.model], this.panelX + 28, this.panelY + 44)
+                game.draw.drawImage(game.allImg[this.model || "medals_1"], this.panelX + 28, this.panelY + 44)
                 game.draw.fillStyle = "#666"
                 game.draw.font = "20px consolas"
                 game.draw.textAlign = "right"

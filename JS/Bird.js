@@ -10,11 +10,11 @@ class Bird {
     }
     update() {
         if (this.status == "drop") {
-            this.changeY += 0.5
+            this.changeY += 0.3
             this.y += this.changeY
-            this.rotate += 0.08
+            this.rotate += 0.07
         } else if (this.status == 'up') {
-            this.changeY -= 0.6
+            this.changeY -= 0.3
             this.changeY <= 0 ? this.status = "drop" : null
             this.y -= this.changeY
             this.y <= 0 ? this.y = 0 : null

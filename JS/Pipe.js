@@ -35,6 +35,6 @@ class Pipe {
     }
     render() {
         game.draw.drawImage(game.allImg["pipe_down"], 0, this.h - this.h1, this.w, this.h1, this.x, 0, this.w, this.h1)
-        game.draw.drawImage(game.allImg['pipe_up'], 0, 0, this.w, this.h2, this.x, this.h + 1 + this.space, this.w, this.h2)
+        game.draw.drawImage(game.allImg['pipe_up'], 0, 0, this.w, this.h2, this.x, this.h1 + this.space, this.w, this.h2)
     }
 }
